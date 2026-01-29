@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered racket sports analysis for table tennis, badminton, and pickleball. Built by athletes to improve match performance and tactical decisions." />
+    <title>Gray Oleander Active - Sports Technology | AI Racket Sports Analysis | Table Tennis & Badminton Performance Tools</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Playfair Display for elegant headlines -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!--<style>
+        :root {
+            --primary-color: #2E5090;
+            --secondary-color: #FF8C42;
+            --accent-color: #6B7F3B;
+            --light-bg: #F8F9FA;
+            --dark-text: #1A1A1A;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a52 50%, var(--accent-color) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+			display: flex;
+            align-items: center;
+            gap: 30px;
+		}
+		
+		.logo img {
+			-webkit-mask-image: radial-gradient(
+			circle,
+			black 60%,
+			transparent 72%
+			);
+			mask-image: radial-gradient(
+			circle,
+			black 60%,
+			transparent 72%
+			);
+		}
+	
+		.logo {
+			width: 48px;
+			height: 48px;
+			/* background-image: url('/images/logo.png'); */
+			background-image: url('images/goati.png'); 
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		
+		.logo:hover {
+			filter: drop-shadow(0 0 2em #646cffaa);
+		}
+        
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border: 2px solid white;
+            font-weight: bold;
+        }
+        
+        .company-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        
+        .company-info p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            border-bottom: 3px solid transparent;
+            padding-bottom: 5px;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 80, 144, 0.95) 0%, rgba(107, 127, 59, 0.95) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -2px;
+        }
+        
+        .hero-content .highlight {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
+        .hero-content .tagline {
+            font-size: 28px;
+            font-weight: 300;
+            margin-top: 15px;
+            margin-bottom: 40px;
+        }
+        
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        /* Awards Section */
+        #awards {
+            background: var(--light-bg);
+        }
+        
+        #whatwebuild {
+            background: var(--light-bg);
+        }
+
+        .award-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .award-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .award-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .award-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .media-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            margin: 15px 0;
+            border: 2px dashed #ddd;
+        }
+        
+		.media-placeholder img {
+			width: 100%;
+			height: auto;
+			border-radius: 12px;
+			object-fit: cover;
+		}
+
+		.media-caption {
+			font-size: 0.85rem;
+			color: #777;
+			text-align: center;
+		}
+		
+		.trust-signal {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Products Section */
+        #products {
+            background: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .product-info p {
+            color: white; /*#666; */
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .btn-product {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-product:hover {
+            background: #ff7a1f;
+            color: white;
+        }
+        
+        /* Support Section */
+        #support {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        #support .section-title {
+            color: white;
+        }
+        
+        .support-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .support-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .support-image {
+            width: 100%;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 30px 0;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-paypal {
+            display: inline-block;
+            background: #0070ba;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-paypal:hover {
+            background: #005ea6;
+            color: white;
+        }
+        
+        /* Feedback Section */
+        #feedback {
+            background: var(--light-bg);
+        }
+        
+        .feedback-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(46, 80, 144, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .file-upload input[type=file] {
+            display: none;
+        }
+        
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 30px;
+            border: 2px dashed var(--primary-color);
+            border-radius: 6px;
+            background: rgba(46, 80, 144, 0.05);
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .file-upload:hover .file-upload-label {
+            background: rgba(46, 80, 144, 0.1);
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #ff7a1f;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 36px;
+            }
+            
+            .hero-content .tagline {
+                font-size: 18px;
+            }
+            
+            .nav-menu {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu a {
+                font-size: 14px;
+            }
+            
+            .company-info h1 {
+                font-size: 24px;
+            }
+        }
+    </style> -->
+</head>
+<body>
+
+<!-- Header -->
+
+<div class="header">
+    <div class="container">
+       <div class="logo-container"> 
+	        <div class="logo" >
+			</div>
+			<div class="company-info">
+                <h1>GRAY OLEANDER</h1>
+                <p>ACTIVE (SPORT) TECHNOLOGIES Inc.</p>
+            </div>
+			<!-- <img src="" /> 
+		    <div class="logo-placeholder"></div> -->
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <!--<li><a href="#membership">Membership</a></li> -->
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h2>"Champions deserve the right to <span class="highlight">boast,</span></h2>
+            <div class="tagline">earn the right with us!"</div>
+            <table>
+                <tr>
+                    <td>
+                         <img 
+                            src="images/ttayidi.png"
+                            alt="Champion Athlete"
+                            style="width: 90%; max-width: 600px; margin-top: 40px;border-radius: 12px;"
+                        />
+                    </td>
+                    <td></td>
+                    <td>
+                         <img
+                            src="images/ttamiwa.png"
+                            alt="Champion Athlete"
+                            style="width: 90%; max-width: 600px; margin-top: 40px;border-radius: 12px;"
+                        />
+                    </td>
+                </tr>
+            </table>
+           
+        </div>
+    </div>
+</section>
+<section>
+    <div class="trust-signal">
+        <span>🏓 Racket Sports Focused</span>
+        <span>🏆 Competition-Tested</span>
+        <span>🧠 AI-Driven Insights</span>
+        <span>🌍 Built in Canada</span>
+    </div>
+</section>
+
+<!-- Awards Section -->
+<section id="awards">
+    <div class="container">
+        <h2 class="section-title">Awards & Recognition</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">
+            Celebrate our achievements and milestones enabled by technology in the sports.
+        </p>
+        <!-- Carousel -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <!-- <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button> -->
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="images/ropssaa_logo.png" alt="ROPSSAA 2024/2025 Silver Medal" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                <img src="images/westopen_logo.png" alt="Ontario West Open 2025 Champion" class="d-block w-100">
+                </div>
+            
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            </div>
+        
+    </div>
+</section>
+
+<!-- What We Do -->
+<section id="whatwebuild">
+    <div class="container">
+        <h2 class="section-title">What We Do </h2>
+          <div class="product-grid">    	
+            <div class="product-card" >
+                <div class="product-image">
+                    <img style="width:100%; height:100%" src="images/spinmaster.png" 
+                         alt="Performance Analyzers" 
+                    />
+                </div>
+                <div class="product-info">
+                    <h6>🎯 Performance Analyzers</h6>
+                    <h6>Match insights, shot patterns, and improvement recommendations.</h6>
+                </div>
+            </div>
+            
+            <div class="product-card" >
+                <div class="product-image">
+                    <img style="width:100%; height:100%" src="images/intellitrain.png" 
+                         alt="Performance Analyzers" 
+                    />
+
+                </div>
+                <div class="product-info">
+                    <h6>🧠 Intelligent Training Tools</h6>
+                    <h6>Complete training equipment and accessories</h6>
+                </div>
+            </div>
+            
+            <div class="product-card" >
+                <div class="product-image">
+                    <img style="width:100%; height:100%" src="images/athletenovate.png" 
+                         alt="Performance Analyzers" 
+                    />
+                </div>
+                <div class="product-info">
+                    <h6>🚀 Athlete-Centric Innovation</h6>
+                    <h6>Built by athletes, refined through competition.</h6>
+                </div>
+            </div>           
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="freetooldemo">
+    <div class="container">
+        <h2 class="section-title">Free Tool Demo </h2>
+          <div class="product-grid">    	
+            <div class="product-card" >
+                <div class="product-image">
+                    <div class="product-info">
+                    <h6 >Try Our Free Table Tennis Analyzer</h6>
+                    <h6>Experience how match data can reveal improvement opportunities.</h6>
+                </div>
+                
+            </div>
+                <h6 style="text-align:center; padding: 35px;">👉 Launch Free Analyzer</h6>
+                <p style="padding: 2px; font-size:x-small; text-align:center">Early access • Feedback helps shape the platform</p>
+           </div>
+            
+            <div class="product-card" >
+                <div class="product-image">
+                    <button class="btn-product"><a href="free-table-tennis-analyzer.html" style="color:white; font-size:medium"
+                        target="_blank" rel="noopener noreferrer">See How It Works</a> </button>
+                </div>
+                <div class="product-info">
+                    <h6>🎯 For Players & Coaches Alike</h6>
+                    <h6>🎯 No signup required. Free to try</h6>
+                </div>
+            </div>
+                    
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Products Section -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Other Services </h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">
+            Explore our growing range of products and services.
+        </p>
+        
+        <div class="product-grid">	
+			            
+            <div class="product-card">
+                <div class="product-image"><img src="images/tennisaitrain.jpg" /></div>
+                <div class="product-info">
+                    <h4>Equipment Evaluation</h4>
+                    <p>
+                        <ul>
+                            <li><span style="color: rgb(12, 12, 14);">Tech-assisted Racket, blade, rubber analysis.</span></li>
+                            <li><span style="color: rgb(12, 12, 14);">Recommendations based on play style</span></li>
+                        </ul>
+                    </p>
+                    <button>
+                        <a class="btn-product" style="border:none; box-shadow: 0 0 0 5px" href="#contact">Talk to Us</a>
+                    </button>
+                </div>
+            </div>
+			
+			<div class="product-card">
+                <div class="product-image"><img src="images/logistics2.jpg" /></div>
+                <div class="product-info">
+                    <h4>Sports Logistics</h4>
+                    <p><span style="color: rgb(215, 157, 8); font-weight:bold">We got you covered!</span></p>
+                    <button>
+                        <a class="btn-product" style="border:none; box-shadow: 0 0 0 5px" href="#contact">Talk to Us</a>
+                    </button>
+                </div>
+            </div>
+			
+            <div class="product-card" style=" display:none">
+                <div class="product-image">Product Image 1</div>
+                <div class="product-info">
+                    <h4>Pro Racket Series</h4>
+                    <p>Premium quality rackets for professional athletes</p>
+                    <button class="btn-product">Shop Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" style=" display:none">
+                <div class="product-image">Product Image 2</div>
+                <div class="product-info">
+                    <h4>Training Gear</h4>
+                    <p>Complete training equipment and accessories</p>
+                    <button class="btn-product">Shop Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" style=" display:none">
+                <div class="product-image">Product Image 3</div>
+                <div class="product-info">
+                    <h4>Performance Apparel</h4>
+                    <p>High-performance clothing for athletes</p>
+                    <button class="btn-product">Shop Now</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Support Us Section -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Us</h2>
+        
+        <div class="support-content">
+            <p style="font-weight:bold; font-size:large;"> Who We Are
+                <ul style="font-size:large; list-style-type:circle">
+                    <li>Athlete-driven technologists</li>
+                    <li>Focused on racket sports</li>
+                    <li>Obsessed with performance improvement</li>
+                </ul>
+			</p>
+            
+			<!--
+            <div class="support-image">📸 Upload images here to showcase your support</div>
+            <p style="font-size: 16px;">
+                Every contribution makes a champion. Support our mission through PayPal.
+            </p>
+            
+            <button class="btn-paypal" onclick="window.open('https://www.paypal.com', '_blank')">
+                💳 Donate via PayPal
+            </button> -->
+        </div>
+
+        <div class="support-content">
+            <p style="font-weight:bold; font-size:large"> Why G.O.A.T.i
+                <ul style="font-size:large; list-style-type:circle;">
+                    <li>Data instead of guesswork</li>
+                    <li>Training with purpose</li>
+                    <li>Earning the right to BOAST</li>
+                </ul>
+			</p>
+           
+        </div>
+    </div>
+</section>
+
+<!-- Feedback Section -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title"> Send Us Your Feedback</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">
+            We'd love to hear from you! Share your thoughts, suggestions, and experiences.
+        </p>
+        
+        <form class="feedback-form" onsubmit="handleFeedback(event)">
+           <!--  <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div> -->
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Feedback *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+         <!--   
+            <div class="form-group">
+                <label>Attach Images (optional)</label>
+                <div class="file-upload">
+                    <input type="file" id="fileInput" name="file" accept="image/*" multiple>
+                    <label for="fileInput" class="file-upload-label">
+                        📁 Click to upload images
+                    </label>
+                </div>
+            </div> -->
+            
+            <button type="submit" class="btn-submit">Send Feedback</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Gray Oleander Active (Sport) Technologies. All rights reserved.</p>
+        <!--<p>📧 Contact: blueoaktechnology@gmail.com</p> -->
+    </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Is the table tennis analyzer really free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. GOA.T.i offers a free version for players to experience AI-based match analysis."
+    }
+  }]
+}
+</script>
+
+</footer>
+
+<script>
+    function handleFeedback(event) {
+        event.preventDefault();
+        
+        //const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Create mailto link with form data
+        const subject = encodeURIComponent('Feedback from G.O.A.T.i portal');
+        const body = encodeURIComponent(message + '\n\nFrom: ' + email);
+        const mailtoLink = 'mailto:blueoaktechnology@outlook.com?subject=' + subject + '&body=' + body;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Show confirmation
+        alert('Thank you for your feedback! Your default email client will open to send your message');
+        
+        // Reset form
+        document.querySelector('.feedback-form').reset();
+    }
+</script> 
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
